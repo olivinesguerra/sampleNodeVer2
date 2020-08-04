@@ -4,6 +4,12 @@
 
 Node: 13.7 (Please use nvm)
 
+If the database is already setup:
+
+Please insert this on oauth_clients:
+1.  { client_id: website, client_secret: "secretsite", "grant_types": "authorization", "name": "web, "redirect": "0.0.0.0", "scope": "admin"}
+2. { client_id: mobile, client_secret: "secretmobile", "grant_types": "authorization", "name": "mobile, "redirect": "http://localhost/cb", "scope": "mobile"}
+
 # sampleAPI
 This is a [Moleculer](https://moleculer.services/)-based microservices project. Generated with the [Moleculer CLI](https://moleculer.services/docs/0.14/moleculer-cli.html).
 
