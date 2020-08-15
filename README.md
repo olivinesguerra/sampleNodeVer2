@@ -44,3 +44,9 @@ On the welcome page you can test the generated services via API Gateway and chec
 - `npm test`: Run tests & generate coverage report
 - `npm run dc:up`: Start the stack with Docker Compose
 - `npm run dc:down`: Stop the stack with Docker Compose
+
+
+heroku login
+heroku container:login
+heroku container:push web --app test-homitag
+heroku container:release web --app test-homitag

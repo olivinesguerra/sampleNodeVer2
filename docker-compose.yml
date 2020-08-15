@@ -19,28 +19,28 @@ services:
     networks:
       - internal
 
-  greeter:
+      genre:
     build:
       context: .
     image: sampleAPI
     env_file: docker-compose.env
     environment:
       SERVICES: greeter
-    depends_on:
-      - redis
+    # depends_on:
+    #   - redis
     networks:
       - internal
 
-  products:
+  genre:
     build:
       context: .
     image: sampleAPI
     env_file: docker-compose.env
     environment:
       SERVICES: products
-    depends_on:
-      - mongo
-      - redis
+    # depends_on:
+    #   - mongo
+    #   - redis
     networks:
       - internal
 

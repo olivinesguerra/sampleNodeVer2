@@ -9,19 +9,19 @@
       "logging": false
     },
     "test": {
-      "username": "olibeano",
-      "password": "",
-      "database": "test",
-      "host": "localhost",
+      "username": "jctcodvqatdyrl",
+      "password": "c8e3d95f71d4cd578df2fdd3719227f83cafa90be623d082e561619a637279cb",
+      "database": "dbik6ondmb8sqp",
+      "host": "ec2-34-195-115-225.compute-1.amazonaws.com",
       "port": 5432,
       "dialect": "postgres",
       "logging": false
     },
     "production": {
-      "username": "olibeano",
-      "password": "",
-      "database": "test",
-      "host": "localhost",
+      "username": "jctcodvqatdyrl",
+      "password": "c8e3d95f71d4cd578df2fdd3719227f83cafa90be623d082e561619a637279cb",
+      "database": "dbik6ondmb8sqp",
+      "host": "ec2-34-195-115-225.compute-1.amazonaws.com",
       "port": 5432,
       "dialect": "postgres",
       "logging": false
