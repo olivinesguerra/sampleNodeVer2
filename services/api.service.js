@@ -5,7 +5,7 @@ const cors = require("cors");
 const compression = require("compression");
 const helmet = require("helmet");
 
-const OAuth2Server = require('../mixins/oauth_server.mixin');
+// const OAuth2Server = require('../mixins/oauth_server.mixin');
 
 /**
  * @typedef {import('moleculer').Context} Context Moleculer's Context
@@ -15,7 +15,7 @@ const OAuth2Server = require('../mixins/oauth_server.mixin');
 
 module.exports = {
 	name: "api",
-	mixins: [ ApiGateway, OAuth2Server ],
+	mixins: [ ApiGateway ],
 
 	// More info about settings: https://moleculer.services/docs/0.14/moleculer-web.html
 	settings: {
@@ -44,13 +44,13 @@ module.exports = {
 				use: [],
 
 				// Enable/disable parameter merging method. More info: https://moleculer.services/docs/0.14/moleculer-web.html#Disable-merging
-				mergeParams: false,
+				mergeParams: true,
 
 				// Enable authentication. Implement the logic into `authenticate` method. More info: https://moleculer.services/docs/0.14/moleculer-web.html#Authentication
 				authentication: false,
 
 				// Enable authorization. Implement the logic into `authorize` method. More info: https://moleculer.services/docs/0.14/moleculer-web.html#Authorization
-				authorization: true,
+				authorization: false,
 
 				// The auto-alias feature allows you to declare your route alias directly in your services.
 				// The gateway will dynamically build the full routes from service schema.
@@ -138,26 +138,26 @@ module.exports = {
 		 */
 		async authenticate(ctx, route, req) {
 			// Read the token from header
-			const auth = req.headers["authorization"];
+			// const auth = req.headers["authorization"];
 
-			if (auth && auth.startsWith("Bearer")) {
-				const token = auth.slice(7);
+			// if (auth && auth.startsWith("Bearer")) {
+			// 	const token = auth.slice(7);
 
-				// Check the token. Tip: call a service which verify the token. E.g. `accounts.resolveToken`
-				if (token == "123456") {
-					// Returns the resolved user. It will be set to the `ctx.meta.user`
-					return { id: 1, name: "John Doe" };
+			// 	// Check the token. Tip: call a service which verify the token. E.g. `accounts.resolveToken`
+			// 	if (token == "123456") {
+			// 		// Returns the resolved user. It will be set to the `ctx.meta.user`
+			// 		return { id: 1, name: "John Doe" };
 
-				} else {
-					// Invalid token
-					throw new ApiGateway.Errors.UnAuthorizedError(ApiGateway.Errors.ERR_INVALID_TOKEN);
-				}
+			// 	} else {
+			// 		// Invalid token
+			// 		throw new ApiGateway.Errors.UnAuthorizedError(ApiGateway.Errors.ERR_INVALID_TOKEN);
+			// 	}
 
-			} else {
-				// No token. Throw an error or do nothing if anonymous access is allowed.
-				// throw new E.UnAuthorizedError(E.ERR_NO_TOKEN);
-				return null;
-			}
+			// } else {
+			// 	// No token. Throw an error or do nothing if anonymous access is allowed.
+			// 	// throw new E.UnAuthorizedError(E.ERR_NO_TOKEN);
+			// 	return null;
+			// }
 		},
 
 		/**
@@ -173,36 +173,36 @@ module.exports = {
 		async authorize(ctx, route, req) {
 			console.log(req.url);
 
-			if(req.url === "/register" || 
-				req.url === "/resetPassword" || 
-				req.url === "/socialLogin" ||
-				req.url === "/login" || 
-				req.url === "/sendVerficationCode" ||
-				req.url === "/verifyVCode" || 
-				req.url === "/changePassword" ||
-				req.url === "/oauth/token"){
-				return Promise.resolve(ctx);
-			}
+			// if(req.url === "/register" || 
+			// 	req.url === "/resetPassword" || 
+			// 	req.url === "/socialLogin" ||
+			// 	req.url === "/login" || 
+			// 	req.url === "/sendVerficationCode" ||
+			// 	req.url === "/verifyVCode" || 
+			// 	req.url === "/changePassword" ||
+			// 	req.url === "/oauth/token"){
+			// 	return Promise.resolve(ctx);
+			// }
 
-			const auth = req.headers.authorization;
+			// const auth = req.headers.authorization;
 
-			if (auth && auth.startsWith("Bearer")) {
-				const token = auth.slice(7);
+			// if (auth && auth.startsWith("Bearer")) {
+			// 	const token = auth.slice(7);
 
-				if (token === "") {
-					throw new ApiGateway.Errors.UnAuthorizedError(ApiGateway.Errors.ERR_INVALID_TOKEN);
-				}
+			// 	if (token === "") {
+			// 		throw new ApiGateway.Errors.UnAuthorizedError(ApiGateway.Errors.ERR_INVALID_TOKEN);
+			// 	}
 
-				let result = await this.authorizeFromOAuthServer(req, res);
-				if(!result.user || result.user.length === 0){
-					return Promise.reject(new ApiGateway.Errors.UnAuthorizedError(ApiGateway.Errors.ERR_INVALID_TOKEN));
-				}else{
-					ctx.meta.user = result.user;
-					return Promise.resolve(ctx);
-				}
-			} else {
-				throw new ApiGateway.Errors.BadRequestError("URL INVALID");
-			}
+			// 	let result = await this.authorizeFromOAuthServer(req, res);
+			// 	if(!result.user || result.user.length === 0){
+			// 		return Promise.reject(new ApiGateway.Errors.UnAuthorizedError(ApiGateway.Errors.ERR_INVALID_TOKEN));
+			// 	}else{
+			// 		ctx.meta.user = result.user;
+			// 		return Promise.resolve(ctx);
+			// 	}
+			// } else {
+			// 	throw new ApiGateway.Errors.BadRequestError("URL INVALID");
+			// }
 		}
 
 	}
