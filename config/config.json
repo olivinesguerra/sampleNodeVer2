@@ -1,27 +1,27 @@
 {
     "development": {
-      "username": "olibeano",
-      "password": "",
-      "database": "test",
-      "host": "localhost",
+      "username": "ncjbhvcctojpco",
+      "password": "cb3678a280eca06ff27a2a5766cf0935fa693046cb4bccbc14c87e422da29ded",
+      "database": "d5i7nrd57fkoib",
+      "host": "ec2-54-146-4-66.compute-1.amazonaws.com",
       "port": 5432,
       "dialect": "postgres",
       "logging": false
     },
     "test": {
-      "username": "jctcodvqatdyrl",
-      "password": "c8e3d95f71d4cd578df2fdd3719227f83cafa90be623d082e561619a637279cb",
-      "database": "dbik6ondmb8sqp",
-      "host": "ec2-34-195-115-225.compute-1.amazonaws.com",
+      "username": "ncjbhvcctojpco",
+      "password": "cb3678a280eca06ff27a2a5766cf0935fa693046cb4bccbc14c87e422da29ded",
+      "database": "d5i7nrd57fkoib",
+      "host": "ec2-54-146-4-66.compute-1.amazonaws.com",
       "port": 5432,
       "dialect": "postgres",
       "logging": false
     },
     "production": {
-      "username": "jctcodvqatdyrl",
-      "password": "c8e3d95f71d4cd578df2fdd3719227f83cafa90be623d082e561619a637279cb",
-      "database": "dbik6ondmb8sqp",
-      "host": "ec2-34-195-115-225.compute-1.amazonaws.com",
+      "username": "ncjbhvcctojpco",
+      "password": "cb3678a280eca06ff27a2a5766cf0935fa693046cb4bccbc14c87e422da29ded",
+      "database": "d5i7nrd57fkoib",
+      "host": "ec2-54-146-4-66.compute-1.amazonaws.com",
       "port": 5432,
       "dialect": "postgres",
       "logging": false

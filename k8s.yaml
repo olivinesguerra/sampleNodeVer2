@@ -11,12 +11,6 @@ data:
   SERVICEDIR: services
   
   TRANSPORTER: redis://redis:6379
-  
-  
-  
-  
-  
-  
   CACHER: redis://redis:6379
   MONGO_URI: mongodb://mongo/sampleAPI
 

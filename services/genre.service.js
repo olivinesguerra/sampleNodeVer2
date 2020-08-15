@@ -81,7 +81,13 @@ module.exports = {
 							}
 						}
 					});	
-					return { message: "success",code: 200, data: item};
+
+					if(Object.keys(item).length !== 0){
+						return { message: "success",code: 200, data: item};
+					} else {
+						return new MoleculerClientError("no-exist", 501, "no-exist", { message: "genre does'nt exist." });
+					}
+					
 				} catch (e) {
 					console.log(e);
 				}
