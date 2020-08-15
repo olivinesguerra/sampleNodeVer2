@@ -470,20 +470,20 @@ module.exports = {
 	 * Service created lifecycle event handler
 	 */
 	created() {
-		this.broker.cacher.clean();
+		//this.broker.cacher.clean();
 	},
 
 	/**
 	 * Service started lifecycle event handler
 	 */
 	started() {
-		this.broker.cacher.clean();
+		//this.broker.cacher.clean();
 	},
 
 	/**
 	 * Service stopped lifecycle event handler
 	 */
 	stopped() {
-		this.broker.cacher.clean();
+		//his.broker.cacher.clean();
 	}
 };

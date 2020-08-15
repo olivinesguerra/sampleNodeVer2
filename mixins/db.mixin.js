@@ -24,7 +24,7 @@ module.exports = function(collection) {
 			 */
 			async [cacheCleanEventName]() {
 				if (this.broker.cacher) {
-					await this.broker.cacher.clean(`${this.fullName}.*`);
+					//await this.broker.cacher.clean(`${this.fullName}.*`);
 				}
 			}
 		},

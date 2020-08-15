@@ -105,7 +105,7 @@ module.exports = {
 					let genreArr = genre.split(",");
 					
 					for(let i = 0; i < genreArr.length; i++){
-						const isExist = await this.checkIfGenreExist(ctx, genreArr[i]);
+						const isExist = await this.checkIfGenreExist(genreArr[i]);
 						if(!isExist){
 							return new MoleculerClientError("no-exist", 501, "item-no-exist", { message: "genre does'nt exist.", field: "genre", value: genreArr[i] });
 						}
@@ -186,10 +186,14 @@ module.exports = {
 	 * Methods
 	 */
 	methods: {
-		async checkIfGenreExist(ctx,id){
-			const item = await ctx.call("genre.show", {  id  });
+		//Cannot use redis
+		async checkIfGenreExist(id){
+			let item = await Genre.findOne({ 
+				where: { id }, 
+				raw: true
+			});	
 			console.log(item.data);
-			return item.data ? true : false;
+			return item ? true : false;
 		},
 	},
 

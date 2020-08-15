@@ -58,42 +58,44 @@ module.exports = {
 	// More info: https://moleculer.services/docs/0.14/networking.html
 	// Note: During the development, you don't need to define it because all services will be loaded locally.
 	// In production you can set it via `TRANSPORTER=nats://localhost:4222` environment variable.
-	cacher: {
-		type: "Redis",
-		options: {
-			prefix: "kiindred",            
-			ttl: 60*60*60*60, 
-			monitor: true ,
-			redis: {
-				host: process.env.CACHE_HOST ,
-				port: process.env.CACHE_PORT,
-				password: "",
-				db: 0,
-				retryStrategy: function(times) {
-					let delay = Math.min(times * 50, 2000);
-					return delay;
-				}
-			},
-		}
-	},
+	cacher: null,
+	// cacher: {
+	// 	type: "Redis",
+	// 	options: {
+	// 		prefix: "kiindred",            
+	// 		ttl: 60*60*60*60, 
+	// 		monitor: true ,
+	// 		redis: {
+	// 			host: process.env.CACHE_HOST ,
+	// 			port: process.env.CACHE_PORT,
+	// 			password: "",
+	// 			db: 0,
+	// 			retryStrategy: function(times) {
+	// 				let delay = Math.min(times * 50, 2000);
+	// 				return delay;
+	// 			}
+	// 		},
+	// 	}
+	// },
 
 	// Define transporter. 
 	// More info: https://moleculer.services/docs/0.13/networking.html
-	transporter:{
-		type:"Redis",
-		nodeID: 3,
-		ttl: 30,
-		options:{
-			host: process.env.TRANSPORTER_HOST,
-			port: process.env.TRANSPORTER_PORT,
-			password: "",
-			db: 1,
-			retryStrategy: function(times) {
-				let delay = Math.min(times * 50, 2000);
-				return delay;
-			}
-		}
-	},
+	transporter: null,
+	// transporter:{
+	// 	type:"Redis",
+	// 	nodeID: 3,
+	// 	ttl: 30,
+	// 	options:{
+	// 		host: process.env.TRANSPORTER_HOST,
+	// 		port: process.env.TRANSPORTER_PORT,
+	// 		password: "",
+	// 		db: 1,
+	// 		retryStrategy: function(times) {
+	// 			let delay = Math.min(times * 50, 2000);
+	// 			return delay;
+	// 		}
+	// 	}
+	// },
 
 	// Define a serializer.
 	// Available values: "JSON", "Avro", "ProtoBuf", "MsgPack", "Notepack", "Thrift".
