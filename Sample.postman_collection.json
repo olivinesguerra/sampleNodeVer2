@@ -1,0 +1,277 @@
+{
+	"info": {
+		"_postman_id": "0636520d-e647-40d8-b6c6-612a240470ba",
+		"name": "Sample",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://test-homitag.herokuapp.com/api/genre/insert",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "dsfsdfsdfdfasdfasdfasdfdsfasdfasdf",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "sdfsdfsdfsdfsdf",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://test-homitag.herokuapp.com/api/genre/insert",
+					"protocol": "https",
+					"host": [
+						"test-homitag",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"genre",
+						"insert"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://test-homitag.herokuapp.com/api/genre/show",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "71a4379d-58e8-4402-a89a-24484d8401e3",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://test-homitag.herokuapp.com/api/genre/show",
+					"protocol": "https",
+					"host": [
+						"test-homitag",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"genre",
+						"show"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://test-homitag.herokuapp.com/api/genre/index?skip=0&limit=10",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://test-homitag.herokuapp.com/api/genre/index?skip=0&limit=10",
+					"protocol": "https",
+					"host": [
+						"test-homitag",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"genre",
+						"index"
+					],
+					"query": [
+						{
+							"key": "skip",
+							"value": "0"
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://test-homitag.herokuapp.com/api/movie/insert",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "dfsdafasfssddf123dfasdffasdfasdfdsfsdffsdfsdf",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "asdfasdfasdf",
+							"type": "text"
+						},
+						{
+							"key": "release_date",
+							"value": "2021/12/02",
+							"type": "text"
+						},
+						{
+							"key": "genre",
+							"value": "782ef0ee-8b94-40dd-b803-55929c47a222,fb7a1646-dc03-4aec-925e-85329c57ad0b",
+							"type": "text"
+						},
+						{
+							"key": "duration",
+							"value": "1231231231",
+							"type": "text"
+						},
+						{
+							"key": "rating",
+							"value": "5",
+							"type": "text"
+						},
+						{
+							"key": "id",
+							"value": "928c1a31-9b16-4d25-a8fb-005a9f255c79",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "https://test-homitag.herokuapp.com/api/movie/insert",
+					"protocol": "https",
+					"host": [
+						"test-homitag",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"movie",
+						"insert"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://test-homitag.herokuapp.com/api/movie/index",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "skip",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "limit",
+							"value": "10",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://test-homitag.herokuapp.com/api/movie/index",
+					"protocol": "https",
+					"host": [
+						"test-homitag",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"movie",
+						"index"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://test-homitag.herokuapp.com/api/movie/show",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "e3e27f4e-3700-458a-8d1b-c73eb7ac892b",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://test-homitag.herokuapp.com/api/movie/show",
+					"protocol": "https",
+					"host": [
+						"test-homitag",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"movie",
+						"show"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://test-homitag.herokuapp.com/api/genre/insert",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://test-homitag.herokuapp.com/api/genre/insert",
+					"protocol": "https",
+					"host": [
+						"test-homitag",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"genre",
+						"insert"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
