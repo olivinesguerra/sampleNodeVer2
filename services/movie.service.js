@@ -67,7 +67,7 @@ module.exports = {
 			async handler(ctx) {
 				const { id } = ctx.params;
 				try {
-					let item = await Movie.fineOne({ 
+					let item = await Movie.findOne({ 
 						where: { id },
 						include: [{
 							model: Genre,
