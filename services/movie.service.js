@@ -67,7 +67,7 @@ module.exports = {
 			async handler(ctx) {
 				const { id } = ctx.params;
 				try {
-					let list = await Movie.findAll({ 
+					let item = await Movie.fineOne({ 
 						where: { id },
 						include: [{
 							model: Genre,
@@ -82,10 +82,10 @@ module.exports = {
 						}]
 					});	
 
-					if(list.length !== 0){
-						return { message: "success",code: 200, data: list[0] };
+					if(item){
+						return { message: "success",code: 200, data: item };
 					} else {
-						return new MoleculerClientError("no-exist", 501, "no-exist", { message: "genre does'nt exist." });
+						return new MoleculerClientError("no-exist", 501, "no-exist", { message: "movie does'nt exist." });
 					}
 
 					
