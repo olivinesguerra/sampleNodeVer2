@@ -192,7 +192,6 @@ module.exports = {
 				where: { id }, 
 				raw: true
 			});	
-			console.log(item.data);
 			return item ? true : false;
 		},
 	},

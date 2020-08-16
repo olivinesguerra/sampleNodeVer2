@@ -50,3 +50,4 @@ heroku login
 heroku container:login
 heroku container:push web --app test-homitag
 heroku container:release web --app test-homitag
+
